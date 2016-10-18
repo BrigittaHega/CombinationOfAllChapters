@@ -10,43 +10,75 @@ struct Weather
 	int averageTemperature;
 };
 
+enum Month { JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER };
+
+void displayMonth(Month);
+
 int main()
 {
 	const int MONTH = 12;
 	Weather weatherData[MONTH];
-	int index;
+//	int index;
+	Month monthText;
 	
-	for (index = 1; index < MONTH; index++)
+	for (monthText = JANUARY; monthText <= DECEMBER; monthText = static_cast<Month>(monthText + 1))
 	{
-		cout<<"For month "<<(index+1);
+		cout<<"For month ";
+		displayMonth(monthText);
  		cout << "\nEnter the total rainfall for month"<<":\n";
- 		cin >> weatherData[index].totalRainfall;
+ 		cin >> weatherData[monthText].totalRainfall;
 		cout << "\nEnter the high temperature for the weather:\n";
-		cin >> weatherData[index].highTemperature;
+		cin >> weatherData[monthText].highTemperature;
 		cout << "\nEnter the low temperature for the weather:\n";
-		cin >> weatherData[index].lowTemperature;
+		cin >> weatherData[monthText].lowTemperature;
 		cout<<endl;
 		cout << "The monthly average temperature is ";
-		weatherData[index].averageTemperature = (weatherData[index].highTemperature/ weatherData[index].lowTemperature)/2;
-		cout<<weatherData[index].averageTemperature;
-		if(weatherData[index].lowTemperature < -100 && weatherData[index].highTemperature > 140)
-		{
-			cout<<"/nThe number is invalid";
-		}
+		weatherData[monthText].averageTemperature = (weatherData[monthText].highTemperature/ weatherData[monthText].lowTemperature)/2;
+		cout<<weatherData[monthText].averageTemperature;
 		cout << endl<<endl;
 	}
 	
 	float annualRain, annualTemp;
-	for (index = 1; index < MONTH; index++)
+	for (monthText = JANUARY; monthText <= DECEMBER; monthText = static_cast<Month>(monthText + 1))
 	{
- 		annualRain += weatherData[index].totalRainfall;
-		annualTemp += weatherData[index].averageTemperature;
+ 		annualRain += weatherData[monthText].totalRainfall;
+		annualTemp += weatherData[monthText].averageTemperature;
 	}
 	cout << "\nTotal Rain: \n"<<annualRain<<endl
 	<< "\nAverage annual rain: "<<annualRain/MONTH<<endl
 	<<"\nAverage annual temp: "<<annualTemp/MONTH;
 	
 	return 0;
+}
+
+void displayMonth(Month b)
+{
+	switch(b)
+	{
+		case JANUARY : cout << "January";
+		break;
+		case FEBRUARY : cout << "February";
+		break;
+		case MARCH : cout << "March";
+		break;
+		case APRIL : cout << "April";
+		break;
+		case MAY : cout << "May";
+		break;
+		case JUNE : cout << "June";
+		break;
+		case JULY : cout << "July";
+		break;
+		case AUGUST : cout << "August";
+		break;
+		case SEPTEMBER : cout << "September";
+		break;
+		case OCTOBER : cout << "October";
+		break;
+		case NOVEMBER : cout << "November";
+		break;
+		case DECEMBER : cout << "December";
+	}
 }
 
 //Total Rainfall
