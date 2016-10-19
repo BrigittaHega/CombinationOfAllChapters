@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 using namespace std;
-struct Player
+
+struct Student
 {
  //Movie title
 	string name; //Director that make the movie
@@ -17,12 +18,13 @@ struct Player
 int main()
 {
 	int num;
-	Player player[num];
+	int num2;
+	Student player[num];
 	int index;
 	//Player playerData;
 	
-	Tests *testPtr = nullptr; // Define a Circle pointer
-	tesrPtr = new Test; // Dynamically allocate a Circle structure
+	Student *testPtr; // Define a Circle pointer
+	testPtr = new Student; // Dynamically allocate a Circle structure
 //	cirPtr->radius = 10; // Store a value in the radius member
 //	cirPtr->diameter = 20; // Store a value in the diameter member
 //	cirPtr->area = 314.159;
@@ -34,14 +36,10 @@ int main()
 	{
  		cout << "\nEnter your ID number: \n";
  		cin >> player[num].idnum;
-		cout << "\nEnter the high temperature for the weather:\n";
-		cin >> player[num].highTemperature;
-		cout << "\nEnter the low temperature for the weather:\n";
-		cin >> weatherData[monthText].lowTemperature;
-		cout<<endl;
-		cout << "The monthly average temperature is ";
-		weatherData[monthText].averageTemperature = (weatherData[monthText].highTemperature/ weatherData[monthText].lowTemperature)/2;
-		cout<<weatherData[monthText].averageTemperature;
+		cout << "\nEnter your scores:\n";
+		cin >> testPtr->tests;
+		
+		
 		cout << endl<<endl;
 	}
 
