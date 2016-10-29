@@ -74,26 +74,35 @@ Employee::Employee(string nameList = "", int id = 0, string departmentList = "",
 	
 int main()
 {
-	const int DATA = 3;
+	const int DATA = 4;
 	
 	int idData;
 	string nameData, departmentData, positionData;
 	
-	cout<<"Enter your name, id number, department, and position:\n";
-	cin>>nameData
-	>>idData
-	>>departmentData
-	>>positionData;
+	Employee data[DATA]={Employee(nameData, idData, departmentData, positionData)}; //But value = 0
 	
-	Employee data[DATA]={nameData, idData, departmentData, positionData};
+	for (int index = 1; index < DATA; index++)
+	{
+		cout<<"Enter your name, id number, department, and position:\n";
+		cin>>nameData
+		>>idData
+		>>departmentData
+		>>positionData;
+		cout<<endl;
+	}
 	
-	for (int index = 1; index <= DATA; index++)
+//	data[index].setName(nameData); 
+//	data[index].setID(idData); 
+//	data[index].setDepartment(departmentData); 
+//	data[index.setPosition(positionData); 
+	
+	for (int index = 0; index < DATA; index++)
 	{
 		cout<<"What you get:\n";
-		cout<<data.getName()<<endl
-		<<data.getID() <<endl
-		<<data.getDepartment()<<endl  
-		<<data.getPosition();
+		cout<<data[index].getName()<<endl
+		<<data[index].getID() <<endl
+		<<data[index].getDepartment()<<endl  
+		<<data[index].getPosition();
 	}
 	
 	return 0;
