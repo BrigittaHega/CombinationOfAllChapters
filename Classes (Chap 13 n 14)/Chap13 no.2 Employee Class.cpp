@@ -13,20 +13,23 @@ class Employee
 		
 	public:
 		//Constructor
+		Employee();
 		Employee(string, int, string, string);
+		Employee(string, int);
 		//Mutators
 		void setName(string);
 		void setID(int);
 		void setDepartment(string);
 		void setPosition(string);
+		void display();
 		//Accessors
-		string getName();
+	/*	string getName();
 		int getID() const;
 		string getDepartment();
-		string getPosition();
+		string getPosition();*/
 };
 	//Accessors
-	string Employee::getName()
+/*	string Employee::getName()
 	{
 		return name;
 	}
@@ -42,19 +45,35 @@ class Employee
 	{
 		return position;
 	}
-
+*/
 // Constructor
-Employee::Employee(string nameList = "", int id = 0, string departmentList = "", string positionList = "")
+Employee::Employee() 
+{
+	name = "";
+	idNumber = 0;
+	department = "";
+	position = "";
+}
+
+Employee::Employee(string nameList, int id, string departmentList, string positionList)
 {
 	name = nameList;
 	idNumber = id;
 	department = departmentList;
 	position = positionList;
 }
+
+Employee::Employee(string nameList, int id)
+   {
+   		name = nameList;
+		idNumber = id;
+   		department ="";
+   	  	position ="";
+   }
 //Mutators
-	void Employee::setName(string name)
+	void Employee::setName(string nameList)
 	{
-		name = name;
+		name = nameList;
 	};
 	
 	void Employee::setID(int id)
@@ -62,26 +81,53 @@ Employee::Employee(string nameList = "", int id = 0, string departmentList = "",
 		idNumber = id;
 	};
 	
-	void Employee::setDepartment(string department)
+	void Employee::setDepartment(string departmentList)
 	{
-		department = department;
+		department = departmentList;
 	};
 	
-	void Employee::setPosition(string position)
+	void Employee::setPosition(string positionList)
 	{
-		position = position;
+		position = positionList;
 	};
+	
+	void Employee::display()
+   {
+      cout<< name<< "  "
+	  << idNumber<<"  "
+	  <<department<<"  "
+	  << position<<endl;
+   }
 	
 int main()
 {
-	const int DATA = 4;
+	Employee data1;
+	data1.setName("Susan Myers");
+	data1.setID(47899);
+	data1.setDepartment("Accounting");
+	data1.setPosition("Vice President");   
 	
-	int idData;
-	string nameData, departmentData, positionData;
+	Employee data2 ("Mark Jones",39119,"IT","Programmer");
 	
-	Employee data[DATA]={Employee(nameData, idData, departmentData, positionData)}; //But value = 0
+	Employee data3("Joy Rogers",81774);
+	data3.setDepartment("Manufacturing");
+	data3.setPosition("Engineering");  
 	
-	for (int index = 1; index < DATA; index++)
+	cout<<"Name       ID Number  Department    Position \n";
+	cout<<"____________________________________________\n";
+	data1.display();
+	cout<<"____________________________________________\n";
+	data2.display();
+	cout<<"____________________________________________\n";
+	data3.display();
+//	const int DATA = 4;
+	
+//	int idData;
+//	string nameData, departmentData, positionData;
+	
+//	Employee data[DATA]={Employee(nameData, idData, departmentData, positionData)}; //But value = 0. Why???
+	
+/*	for (int index = 1; index < DATA; index++)
 	{
 		cout<<"Enter your name, id number, department, and position:\n";
 		cin>>nameData
@@ -90,12 +136,13 @@ int main()
 		>>positionData;
 		cout<<endl;
 	}
-	
+	*/
 //	data[index].setName(nameData); 
 //	data[index].setID(idData); 
 //	data[index].setDepartment(departmentData); 
 //	data[index.setPosition(positionData); 
 	
+/*	Almost Successful Array
 	for (int index = 0; index < DATA; index++)
 	{
 		cout<<"What you get:\n";
@@ -103,7 +150,7 @@ int main()
 		<<data[index].getID() <<endl
 		<<data[index].getDepartment()<<endl  
 		<<data[index].getPosition();
-	}
+	}*/
 	
 	return 0;
 }
