@@ -13,105 +13,126 @@ class Date
 		//enum Month = { JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER};
 	public:
 		//Member function declaration
-		void setMonth(int);
-		void setDay(int);
-		void setYear(int);
-		void displayMonth(int);
-		int getMonth() const;
+		void setMonth(/*int*/);
+		void setDay(/*int*/);
+		void setYear(/*int*/);
+		string DisplayMonth(/*int*/);
+		void display();
+	/*	int getMonth() const;
 		int getYear() const;
 		int getDay() const;
-		int getDisplayMonth() const;
+		int getDisplayMonth() const;*/
 };
-
-	int Date::getMonth() const
+	void Date::setMonth(/*int b*/)
 	{
-		return month;
-	}
-	int Date::getDay() const
-	{
-		return day;
-	}
-	int Date::getYear() const
-	{
-		return year;
-	}
-	int Date::getDisplayMonth() const
-	{
-		return month;
-	}
-	void Date::setMonth(int b)
-	{
-		if (b >= 1 && b <= 12)
-			month = b;
-		else
+		cout<<"Month:";
+		cin>>month;
+		if (/*b*/month < 1 && /*b*/month > 12)
+		//	month = b;
+		//else
 		{
-			cout << "Invalid month\n";
+			cout << "Invalid month. It has to be between 1 until 12.\n";
+			setMonth();
 		}
 	};
 	
-	void Date::setDay(int c)
+	void Date::setDay(/*int c*/)
 	{
-		if (c >= 1 && c <= 31)
-		day = c;
-		else
+		cout<<"Day:";
+		cin>>day;
+		if (/*c*/ day < 1 && day/*c*/> 31)
+	//	day = c;
+	//	else
 		{
-			cout << "Invalid day\n";
+			cout << "Invalid day. It has to be between 1 until 31.\n";
+			setDay();
 		}
 	};
 	
-	void Date::setYear(int d)
+	void Date::setYear(/*int d*/)
 	{
-		if (d >= 1 && d <= 3000)
-		year = d;
-		else
+		cout<<"Year:";
+		cin>>year;
+		if (/*d*/year < 1 && year/*d*/ >= 10000)
+	//	year = d;
+	//	else
 		{
-			cout << "Invalid year\n";
+			cout << "Invalid year. It has to be between 1 until 9999.\n";
+			setYear();
 		}
 	};
 		
-	void Date::displayMonth(int e)
+	string Date::DisplayMonth(/*int e*/)
 	{
-		month = e;
-	switch(e)
-		{
-			case 1 : cout << "January";
+	//	month = e;
+	switch(month)
+		{//Use return instead cout
+			case 1 : return ("January");
 			break;
-			case 2 : cout << "February";
+			case 2 : return ("February") ;
 			break;
-			case 3 : cout << "March";
+			case 3 : return ("March") ;
 			break;
-			case 4 : cout << "April";
+			case 4 : return ("April") ;
 			break;
-			case 5 : cout << "May";
+			case 5 : return ("May") ;
 			break;
-			case 6 : cout << "June";
+			case 6 : return ("June") ;
 			break;
-			case 7 : cout << "July";
+			case 7 : return ("July") ;
 			break;
-			case 8 : cout << "August";
+			case 8 : return ("August") ;
 			break;
-			case 9 : cout << "September";
+			case 9 : return ("September") ;
 			break;
-			case 10 : cout << "October";
+			case 10 : return ("October") ;
 			break;
-			case 11 : cout << "November";
+			case 11 : return ("November");
 			break;
-			case 12 : cout << "December";
+			case 12 : return ("December") ;
 		};
 	}
 	
-//	void Date::
-
+	void Date::display()
+	{
+		cout<<"Result:\n"
+		<<month<<"/"<<day<<"/"<<year<<endl
+		<<DisplayMonth()<<" "<<day<<" "<<year<<endl
+		<<day<< " "<<DisplayMonth()<<" "<<year;
+	}
+	
+//	int Date::getMonth() const
+//	{
+//		return month;
+//	}
+//	int Date::getDay() const
+//	{
+//		return day;
+//	}
+//	int Date::getYear() const
+//	{
+//		return year;
+//	}
+//	int Date::getDisplayMonth() const
+//	{
+//		return month;
+//	}
 
 int main()
 {
 	Date date;
-	int dayNum, monthNum, yearNum;
+	//int dayNum, monthNum, yearNum;
 	
+	date.setDay() ;
+	date.setMonth(); 
+	date.setYear();
+	date.display();
+
+	return 0;
 	//const int MONTH = 12;
 	//Date dateData[MONTH];
 	
-	cout<<"Day:";
+/*	cout<<"Day:";
 	cin>>dayNum;
 	cout<<"Month: ";
 	cin>>monthNum;
@@ -124,7 +145,7 @@ int main()
 		monthNum = monthText;
 	}
 	*/
-	date.setDay(dayNum);
+/*	date.setDay(dayNum);
 	date.setMonth(monthNum); 
 	date.setYear(yearNum);
 	date.displayMonth(monthNum);
@@ -149,7 +170,7 @@ int main()
 	
 	cout<<tm;
 	*/
-	return 0;
+
 }
 //Design a class calledDate. The class should store a date in three integers:month,day ,
 //andyear. There should be member functions to print the date in the following forms:
