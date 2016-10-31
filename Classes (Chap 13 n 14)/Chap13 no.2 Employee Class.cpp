@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-// Rectangle class declaration.
 class Employee
 {
 	private:
@@ -53,7 +52,8 @@ Employee::Employee()
 	idNumber = 0;
 	department = "";
 	position = "";
-}
+}//A default constructor that assigns empty strings ("" ) to thename,department, and
+//position member variables, and 0 to theidNumber member variable.
 
 Employee::Employee(string nameList, int id, string departmentList, string positionList)
 {
@@ -61,7 +61,8 @@ Employee::Employee(string nameList, int id, string departmentList, string positi
 	idNumber = id;
 	department = departmentList;
 	position = positionList;
-}
+}//A constructor that accepts the following values as arguments and assigns them to
+//the appropriate member variables: employee’s name, employee’s ID number, department, and position.
 
 Employee::Employee(string nameList, int id)
    {
@@ -69,7 +70,10 @@ Employee::Employee(string nameList, int id)
 		idNumber = id;
    		department ="";
    	  	position ="";
-   }
+   }//A constructor that accepts the following values as arguments and assigns them to the
+//appropriate member variables: employee’s name and ID number. Thedepartment
+//andposition fields should be assigned an empty string (""  ).
+
 //Mutators
 	void Employee::setName(string nameList)
 	{
