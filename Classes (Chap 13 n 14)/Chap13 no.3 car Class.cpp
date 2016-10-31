@@ -15,6 +15,7 @@ class Car
 		void accessor();
 		void brake();
 		void accelerate();
+		//Accessor
 		int getYearModel();
 		string getMake();
 		int getSpeed();
