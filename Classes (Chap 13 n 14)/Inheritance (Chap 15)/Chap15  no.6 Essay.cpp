@@ -1,26 +1,25 @@
 class GradedActivity
-7 {
-8 private:
-9 double score; // To hold the numeric score
-10 public:
-11  // Default constructor
-12 GradedActivity()
-13 { score = 0.0; }
-14
-15 // Constructor
-16 GradedActivity(double s)
-17 { score = s; }
-18
-19 // Mutator function
-20 void setScore(double s)
-21  { score = s; }
-22
-23 // Accessor functions
-24 double getScore() const
-25 { return score; }
-26
-27 char getLetterGrade() const;
-28 };
+{
+	private:
+		double score; // To hold the numeric score
+	public:
+// Default constructor
+		GradedActivity(double);
+
+// Constructor
+GradedActivity(double s)
+{ score = s; }
+
+// Mutator function
+void setScore(double s)
+{ score = s; }
+
+ // Accessor functions
+ double getScore() const
+ { return score; }
+
+ char getLetterGrade() const;
+};
 
 /*Essay class
 Design anEssay class that is derived from theGradedActivity class presented in this
