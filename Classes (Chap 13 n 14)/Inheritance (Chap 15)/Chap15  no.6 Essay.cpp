@@ -6,19 +6,13 @@ class GradedActivity
 // Default constructor
 		GradedActivity(double);
 
-// Constructor
-GradedActivity(double s)
-{ score = s; }
-
 // Mutator function
-void setScore(double s)
-{ score = s; }
+		void setScore(double)
 
  // Accessor functions
- double getScore() const
- { return score; }
+ 		double getScore() const
 
- char getLetterGrade() const;
+	char getLetterGrade() const;
 };
 
 /*Essay class
